@@ -13,6 +13,7 @@ export default function App() {
   return (
     <>
     <div id="calculator">
+      <div id="display"></div>
       <div id="btn-container">
         {smth.map((btn) => <button key={btn} type="button">{btn}</button>)}
       </div>

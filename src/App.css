@@ -1,8 +1,28 @@
 
 #calculator {
-    background-color: var(--white1);
+    background-color: var(--black2);
+    width: 25rem;
+    height: 40rem;
+    border-radius: 1rem;
+    margin: 0 auto;
+    margin-top: 15rem;
+}
+#display {
+    height: 10rem;
+    width: 100%;
+}
+#btn-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 0.5rem;
+    width: 20rem;
+    height: 25rem;
+    margin: 0 auto;
 }
 #btn-container button {
     background-color: var(--black3);
     color: var(--white1);
+    width: 5rem;
+    height: 5rem;
 }
