@@ -10,6 +10,7 @@
 #display {
     height: 10rem;
     width: 100%;
+    color: var(--white1);
 }
 #btn-container {
     display: grid;

@@ -1,7 +1,10 @@
 import "./index.css";
 import "./app.css";
+import { useState } from "react";
 
 export default function App() {
+  const [display, setDisplay] = useState("");
+
   const smth = [
     'C', '()', '%', '/',
      7,   8,   9,   'X', 
@@ -13,9 +16,9 @@ export default function App() {
   return (
     <>
     <div id="calculator">
-      <div id="display"></div>
+      <div id="display">{display}</div>
       <div id="btn-container">
-        {smth.map((btn) => <button key={btn} type="button">{btn}</button>)}
+        {smth.map((btn) => <button onClick={() => setDisplay((prev) => prev + btn)} key={btn} type="button">{btn}</button>)}
       </div>
     </div>
     </>
