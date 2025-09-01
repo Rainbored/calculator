@@ -1,17 +1,18 @@
 import "./index.css";
 import "./app.css";
-import { useState } from "react";
+import { use, useState } from "react";
 
 export default function App() {
   const [equation, setEquation] = useState("");
   const [result, setResult] = useState("");
+  const [bracSwitch, setBracSwitch] = useState("(")
 
   const buttons = [
     'C', '()', '%', '/',
      7,   8,   9,   '×', 
      4,   5,   6,   '-',
      1,   2,   3,   '+',
-    'hi',   0,  '.',  '='
+    'hi', 0,  '.',  '='
   ]
 
   const handleClick = (s) => {
@@ -26,7 +27,7 @@ export default function App() {
     }
     else if (s === 'hi') console.log("gl making this");
     else if (s === '=') handleSolve();
-    else if (s === '()') console.log("ok");
+    else if (s === '()') handleBracket();
     else setEquation((prev) => `${prev} ${s} `);
   }
   const handleSolve = () => {
@@ -36,7 +37,11 @@ export default function App() {
       } catch {
         setResult("Error")
       }
-      
+  }
+  const handleBracket = () => {
+    setEquation((prev) => prev + bracSwitch)
+    if (bracSwitch === '(') setBracSwitch(')');
+    else setBracSwitch('(');
   }
 
   return (
