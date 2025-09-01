@@ -15,15 +15,19 @@ export default function App() {
     ]
 
     const handleClick = (s) => {
-      if (Number.isInteger(s) || s === '.') isNaN(equation[equation.length - 1]) ? setEquation((prev) => `${prev} ${s}`) : setEquation((prev) => `${prev}${s}`)
+      if (Number.isInteger(s) || s === '.') setEquation((prev) => prev + s)
       else if (s === 'C') {
         setEquation("");
         setResult("")
       }
       else if (s === '') console.log("gl making this");
-      else if (s === '=') setResult(equation)
+      else if (s === '=') handleSolve();
       else if (s === '()') console.log("ok");
-      else setEquation((prev) => `${prev} ${s}`);
+      else setEquation((prev) => `${prev} ${s} `);
+    }
+    const handleSolve = () => {
+      const holder = equation.split(" ");
+      console.log(holder)
     }
 
   return (
