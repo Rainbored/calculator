@@ -11,24 +11,24 @@ export default function App() {
      7,   8,   9,   '×', 
      4,   5,   6,   '-',
      1,   2,   3,   '+',
-    '',   0,  '.',  '='
-    ]
+    'hi',   0,  '.',  '='
+  ]
 
-    const handleClick = (s) => {
-      if (Number.isInteger(s) || s === '.') setEquation((prev) => prev + s);
-      else if (s === 'C') {
-        setEquation("");
-        setResult("");
-      }
-      else if (s === '') console.log("gl making this");
-      else if (s === '=') handleSolve();
-      else if (s === '()') console.log("ok");
-      else setEquation((prev) => `${prev} ${s} `);
+  const handleClick = (s) => {
+    if (Number.isInteger(s) || s === '.') setEquation((prev) => prev + s);
+    else if (s === 'C') {
+      setEquation("");
+      setResult("");
     }
-    const handleSolve = () => {
-        const alteredEq = equation.replaceAll('×', '*');
-        setResult(Function("return " + alteredEq)());
-      }
+    else if (s === 'hi') console.log("gl making this");
+    else if (s === '=') handleSolve();
+    else if (s === '()') console.log("ok");
+    else setEquation((prev) => `${prev} ${s} `);
+  }
+  const handleSolve = () => {
+      const alteredEq = equation.replaceAll('×', '*');
+      setResult(Function("return " + alteredEq)());
+  }
 
   return (
     <>
@@ -38,7 +38,7 @@ export default function App() {
         <div id="result">{result}</div>
       </div>
       <div id="btn-container">
-        {buttons.map((btn) => <button onClick={() => handleClick(btn)} key={btn} type="button">{btn}</button>)}
+        {buttons.map((btn, index) => <button onClick={() => handleClick(btn)} key={index} id={`btn${index}`} type="button">{btn}</button>)}
       </div>
     </div>
     </>

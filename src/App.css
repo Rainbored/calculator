@@ -2,18 +2,21 @@
 #calculator {
     background-color: var(--black2);
     width: 26rem;
-    height: 42rem;
+    height: 46rem;
     border-radius: 1rem;
     margin: 0 auto;
     margin-top: 15rem;
     padding: 1.5rem;
+    box-shadow: 2px 2px 8px var(--black4);
+    border: 1px solid var(--white3)
 }
 #display {
-    height: 10rem;
+    height: 12rem;
     width: 100%;
     color: var(--white1);
     font-size: 2rem;
     overflow: auto;
+    border-bottom: solid var(--white1) 1px;
 }
 #equation {
     display: flex;
@@ -36,7 +39,7 @@
     grid-template-rows: repeat(5, 1fr);
     width: 24rem;
     height: 30rem;
-    margin: 0 auto;
+    margin: 2rem auto 0 auto;
 }
 #btn-container button {
     background-color: var(--black3);
@@ -46,4 +49,16 @@
     font-size: 3rem;
     border-radius: 1rem;
     border: none;
+}
+#btn3, #btn7, #btn11, #btn15 {
+    background-color: var(--green1)!IMPORTANT;
+}
+#btn0, #btn1, #btn2 {
+    background-color: var(--black4)!IMPORTANT;
+}
+#btn19 {
+    background-color: var(--green2)!IMPORTANT;
+}
+#btn4, #btn5, #btn6, #btn8, #btn9, #btn10, #btn12, #btn13, #btn14, #btn16, #btn17, #btn18 {
+    background-color: var(--green3)!IMPORTANT;
 }
