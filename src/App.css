@@ -42,13 +42,14 @@
     margin: 2rem auto 0 auto;
 }
 #btn-container button {
-    background-color: var(--black3);
     color: var(--white1);
     width: 5rem;
     height: 5rem;
     font-size: 3rem;
     border-radius: 1rem;
     border: none;
+    cursor: pointer;
+    user-select: none;
 }
 #btn3, #btn7, #btn11, #btn15 {
     background-color: var(--green1)!IMPORTANT;
@@ -61,4 +62,11 @@
 }
 #btn4, #btn5, #btn6, #btn8, #btn9, #btn10, #btn12, #btn13, #btn14, #btn16, #btn17, #btn18 {
     background-color: var(--green3)!IMPORTANT;
+}
+#btn16 {
+    background-image: url("clear-svgrepo-com (1).svg")!IMPORTANT;
+    background-size: contain!IMPORTANT;
+    background-repeat: no-repeat!IMPORTANT;
+    background-position: center!IMPORTANT;
+    border: none!IMPORTANT;
 }

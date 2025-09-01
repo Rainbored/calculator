@@ -12,7 +12,7 @@ export default function App() {
      7,   8,   9,   '×', 
      4,   5,   6,   '-',
      1,   2,   3,   '+',
-    'hi', 0,  '.',  '='
+    '',   0,  '.',  '='
   ]
 
   const handleClick = (s) => {
@@ -25,7 +25,7 @@ export default function App() {
       setEquation("");
       setResult("");
     }
-    else if (s === 'hi') console.log("gl making this");
+    else if (s === '') setEquation((prev) => prev.slice(0, -1));
     else if (s === '=') handleSolve();
     else if (s === '()') handleBracket();
     else setEquation((prev) => `${prev} ${s} `);
