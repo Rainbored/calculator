@@ -15,6 +15,10 @@ export default function App() {
   ]
 
   const handleClick = (s) => {
+    if (result !== "") {
+      setEquation("");
+      setResult("");
+    }
     if (Number.isInteger(s) || s === '.') setEquation((prev) => prev + s);
     else if (s === 'C') {
       setEquation("");
@@ -27,7 +31,12 @@ export default function App() {
   }
   const handleSolve = () => {
       const alteredEq = equation.replaceAll('×', '*');
-      setResult(Function("return " + alteredEq)());
+      try {
+        setResult(Function("return " + alteredEq)());
+      } catch {
+        setResult("Error")
+      }
+      
   }
 
   return (
