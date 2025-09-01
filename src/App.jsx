@@ -3,9 +3,10 @@ import "./app.css";
 import { useState } from "react";
 
 export default function App() {
-  const [display, setDisplay] = useState("");
+  const [equation, setEquation] = useState("");
+  const [result, setResult] = useState("");
 
-  const smth = [
+  const buttons = [
     'C', '()', '%', '/',
      7,   8,   9,   'X', 
      4,   5,   6,   '-',
@@ -13,12 +14,27 @@ export default function App() {
     '',   0,  '.',  '='
     ]
 
+    const handleClick = (s) => {
+      if (Number.isInteger(s) || s === '.') isNaN(equation[equation.length - 1]) ? setEquation((prev) => `${prev} ${s}`) : setEquation((prev) => `${prev}${s}`)
+      else if (s === 'C') {
+        setEquation("");
+        setResult("")
+      }
+      else if (s === '') console.log("gl making this");
+      else if (s === '=') setResult(equation)
+      else if (s === '()') console.log("ok");
+      else setEquation((prev) => `${prev} ${s}`);
+    }
+
   return (
     <>
     <div id="calculator">
-      <div id="display">{display}</div>
+      <div id="display">
+        <div id="equation">{equation}</div>
+        <div id="result">{result}</div>
+      </div>
       <div id="btn-container">
-        {smth.map((btn) => <button onClick={() => setDisplay((prev) => prev + btn)} key={btn} type="button">{btn}</button>)}
+        {buttons.map((btn) => <button onClick={() => handleClick(btn)} key={btn} type="button">{btn}</button>)}
       </div>
     </div>
     </>
