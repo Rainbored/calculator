@@ -1,24 +1,35 @@
 
 #calculator {
     background-color: var(--black2);
-    width: 25rem;
-    height: 40rem;
+    width: 26rem;
+    height: 42rem;
     border-radius: 1rem;
     margin: 0 auto;
     margin-top: 15rem;
+    padding: 1.5rem;
 }
 #display {
     height: 10rem;
     width: 100%;
     color: var(--white1);
+    font-size: 2rem;
+    display: flex;
+    justify-content: right;
+    flex-wrap: wrap;
+}
+#equation {
+    width: 100%;
+}
+#result {
+    width: 100%;
+    color: var(--white2);
 }
 #btn-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    gap: 0.5rem;
-    width: 20rem;
-    height: 25rem;
+    width: 24rem;
+    height: 30rem;
     margin: 0 auto;
 }
 #btn-container button {
@@ -26,4 +37,7 @@
     color: var(--white1);
     width: 5rem;
     height: 5rem;
+    font-size: 3rem;
+    border-radius: 1rem;
+    border: none;
 }

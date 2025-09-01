@@ -15,10 +15,10 @@ export default function App() {
     ]
 
     const handleClick = (s) => {
-      if (Number.isInteger(s) || s === '.') setEquation((prev) => prev + s)
+      if (Number.isInteger(s) || s === '.') setEquation((prev) => prev + s);
       else if (s === 'C') {
         setEquation("");
-        setResult("")
+        setResult("");
       }
       else if (s === '') console.log("gl making this");
       else if (s === '=') handleSolve();
@@ -26,8 +26,8 @@ export default function App() {
       else setEquation((prev) => `${prev} ${s} `);
     }
     const handleSolve = () => {
-        const alteredEq = equation.replace('×', '*')
-        setResult(Function("return " + alteredEq)())
+        const alteredEq = equation.replaceAll('×', '*');
+        setResult(Function("return " + alteredEq)());
       }
 
   return (
