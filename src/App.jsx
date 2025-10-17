@@ -1,5 +1,5 @@
 import "./index.css";
-import "./app.css";
+import "./App.css";
 import { use, useState } from "react";
 
 export default function App() {
